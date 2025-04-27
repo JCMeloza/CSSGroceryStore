@@ -1,0 +1,85 @@
+@use 'variables.scss' as vr;
+@use 'mixins.scss' as mx;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@300;400;500&display=swap');
+
+html * {
+    font-family: vr.$primary-font;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: vr.$title-font;
+}
+
+a {
+    color: vr.$orange;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: vr.$max-width-container;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/*header*/
+header {
+    &.header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_login {
+        ul{
+            @include mx.reset-list();
+            gap: 35px;
+            .cart {
+                img{
+                    width: 25px;
+                }
+            }
+            .btn {
+                @include mx.button();
+            }
+        }
+    }
+
+}
+
+nav.nav_primary ul {
+    @include mx.reset-list();
+    gap: 56px;
+    a {
+        text-decoration: none;
+        color: vr.$grey;
+        font-weight: 300;
+        &.active,
+        &:hover {
+            color: vr.$orange;
+            position: relative;
+            &::before{
+                content:'';
+                position: absolute;
+                height: 2px;
+                width: 80%;
+                bottom: -10px;
+                left: 10%;
+                background-color: vr.$orange;
+
+            }
+        }
+    }
+}
