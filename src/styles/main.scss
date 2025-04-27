@@ -3,11 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Poppins:wght@300;400;500&display=swap');
 
 html * {
-    font-family: vr.$primary-font;
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-weight: 300;
+    
+}
+
+body {
+    font-family: vr.$primary-font;
+    color: vr.$black;
 }
 
 h1,
@@ -81,5 +86,127 @@ nav.nav_primary ul {
 
             }
         }
+    }
+}
+/*Hero*/
+.hero {
+    padding-top: 10px;
+    
+    display: flex;
+    justify-content: space-between;
+
+    &_content{
+        width: 55%;
+        padding-top: 50px;
+        h1 {
+            font-size: 70px;
+            font-weight: 800;
+            color: vr.$black;
+            line-height: 70px;
+            margin-bottom: 16px;
+            span{
+                color: vr.$orange;
+            }
+        }
+    }
+
+    &_description {
+        font-size: 20px;
+        font-weight: 300;
+        color: vr.$grey;
+        line-height: 30px;
+        max-width: 70%;
+        margin-bottom: 30px;
+    }
+
+    &_search {
+        display: flex;
+        align-items: stretch;
+        width: 65%;
+        margin-bottom: 30px;
+        input {
+            flex: 1;
+            background-color: rgb(vr.$grey, .15);
+            padding: 10px 20px;
+            border: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            font-size: 20px;
+            display: inline-block;
+
+            &::placeholder {
+                color: #949494;
+                font-weight: 300;
+            }
+        }
+        button {
+            background-color: vr.$orange;
+            display: inline-block;
+            width: 40px;
+            border: 0;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            img{
+                width: 20px;
+            }
+        }
+    }
+    
+    &_info {
+        @include mx.reset-list();
+        flex-wrap: wrap;
+        width: 60%;
+        column-gap: 20px;
+        li {
+            width: 45%;
+            color: vr.$grey;
+            margin: 0;
+            position: relative;
+            padding-left: 30px;
+            &::before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                background-image: url('../img/icon-check.svg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                position: absolute;
+                left: 0;
+                background-size: 20px;
+                top: 3px;
+            }
+        }
+    }
+    &_img {
+        width: 45%;
+        img {
+            max-width: 75%;
+            position: relative;
+            left: -145px;
+        }
+    }
+}
+/*Products*/
+.food-type {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 24px;
+
+    &_item-img{
+        width: 70px;
+
+    }
+    &_item-title {
+        color:vr.$black;
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+    &_item-description {
+        color: vr.$grey;
+        font-size: 13px;
+        font-weight: 300;
     }
 }
