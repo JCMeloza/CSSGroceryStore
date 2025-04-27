@@ -1,0 +1,18 @@
+@use 'variables.scss' as vr;
+@mixin reset-list(){
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+@mixin button(){
+    display: inline-block;
+    background-color: vr.$orange;
+    color: white;
+    border-radius: 16px;
+    padding: 12px 25px;
+    font-weight: 300;
+    text-decoration: none;
+}
